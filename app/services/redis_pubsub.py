@@ -1,7 +1,7 @@
 # app/services/redis_pubsub.py
 import redis.asyncio as redis
 import json
-from backend.api.core.config import settings
+from backend.app.api.core.config import settings
 
 redis_client = redis.from_url(settings.REDIS_URL, decode_responses=True)
 

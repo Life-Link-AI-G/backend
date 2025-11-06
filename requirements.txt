@@ -6,3 +6,5 @@ pymongo
 redis
 google-generativeai
 twilio
+firebase-admin
+uvicorn

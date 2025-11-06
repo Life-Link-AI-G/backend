@@ -1,11 +1,11 @@
-# app/core/config.py
+# lifelink-ai/backend/app/core/config.py
 from pydantic import BaseSettings
 
 class Settings(BaseSettings):
     REDIS_URL: str = "redis://localhost:6379"
-    PROJECT_NAME: str = "LifeLink AI Backend"
-    BACKEND_PORT: int = 8000
-
+    FIREBASE_CREDENTIALS: str = "./firebase-key.json"
+    NOTIFICATION_CHANNEL: str = "notifications"
+    # other settings...
     class Config:
         env_file = ".env"
 
