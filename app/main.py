@@ -2,7 +2,7 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from typing import Dict, List
 import json
-
+from app.auth import router as auth
 app = FastAPI(title="LifeLink AI - Main Server")
 
 # -------------------------------
@@ -10,6 +10,7 @@ app = FastAPI(title="LifeLink AI - Main Server")
 # -------------------------------
 emergency_contacts: Dict[str, List[str]] = {}  # user_id -> [phone/email]
 connected_frontends: Dict[str, WebSocket] = {}  # user_id -> websocket
+app.include_router(auth, prefix="/api/auth", tags=["Authentication"])
 
 # -------------------------------
 # WebSocket endpoint to receive mimic data
